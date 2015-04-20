@@ -1,0 +1,48 @@
+
+.top_position{
+ margin-top: 30px;   
+}
+.bs-component {
+    
+    position: relative;
+}
+.bs-component .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    z-index: 1;
+    display: block;
+    
+}
+.bs-component .modal-dialog {
+    
+    width: 95%
+}
+
+textarea{
+    margin-bottom: 5px;
+    margin-left: 5%;
+    width: 90%;   
+}
+.buttons-div{    
+    padding-top: 10px;
+    margin-left: 80%;
+}
+.buttons-div button{
+    width: 50px;
+        
+}
+
+.btn-margin{
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.modal-content h3{
+    padding-left: 15px;   
+}
+.pytters{
+    min-height: 100px;
+}

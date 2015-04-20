@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Pytter - Como el pajarito pero mas ñoño</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" media="screen">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}" media="screen">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" media="screen">
+        <link rel="stylesheet" href="{% static 'css/app.min.css' %}" media="screen">
+        <link rel="stylesheet" href="{% static 'css/app.css' %}" media="screen">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+<script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+<script src="../bower_components/respond/dest/respond.min.js"></script>
+<![endif]-->
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="../" class="navbar-brand">
+                        <object id="logo" width="120px" height="34px" type="image/svg+xml" data="{% static 'images/pytter.svg' %}">
+
+                        </object>                        
+
+                    </a>
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-main">
+                    <ul class="nav navbar-nav">
+
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Menú<span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="themes">
+                                <li class="divider"></li>
+
+                            </ul>
+                        </li>
+                        <li class="hidden-lg">
+                            <i class="fa fa-user-secret"></i>
+                            Yo!
+                        </li> <!-- no se ve en desktop-->
+                        <li><a href="#" target="_blank">Logout</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">     
+            <br>
+            <div class="row top_position">
+                <div class="col-md-3 visible-lg"><!--Visible solo en desktop-->
+
+                    <div class="bs-component">
+                        <div class="modal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">                      
+                                        <h4 class="modal-title">USER</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Pythonear!</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+                <div class="col-md-9">
+
+                    <div class="bs-component">
+                        <div class="modal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">                    
+
+                                    <h3>Prueba tu código!!!</h3>
+
+                                    <textarea id="code" class="codepress linenumbers-off readonly-off"></textarea> 
+                                    <br>
+                                    <div class="row">
+
+                                        <div class="col-md-3 col-md-offset-9 visible-lg">
+                                            <button  id="mandar" class="btn btn-info">
+                                                <i class="fa fa-cogs"></i>
+                                            </button>
+                                            <button class="btn btn-success ">
+                                                <i class="fa fa-bolt"></i>
+                                            </button>
+                                        </div>                                           
+                                        
+                                    </div>
+                                    <br>
+                                    
+                                    <div class=" hidden-lg">
+                                            <button  id="mandar" class="btn btn-info">
+                                                <i class="fa fa-cogs"></i>
+                                            </button>
+                                            <button class="btn btn-success ">
+                                                <i class="fa fa-bolt"></i>
+                                            </button>
+                                        </div>
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bs-component">
+                        <div class="modal">
+                            <div class="modal-dialog">
+                                <div class="modal-content pytters">
+                                    <h3>Que están probando!!!</h3>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+
+    </body>
+
+    <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>    
+
+    <script src="{% static 'js/Behave.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>   
+
+    <script type="text/javascript">
+
+
+        $("#mandar").click(function(){
+            alert("VVAAA");
+            $.ajax({url: "{% url 'main:ejecutar' %}", 
+                    data:{ python: $('#code').val},
+                    method: post,
+                    success: function(result){
+                        $("#modal-body").html(result);
+                    },error: function(result){
+                        $("#modal-body").html("ERROR");
+                    }
+                   });
+        });  
+
+
+        window.onload = function(){
+
+
+
+            var editor = new Behave({
+                textarea: document.getElementById('code'),
+                replaceTab: true,
+                softTabs: true,
+                tabSize: 4,
+                autoOpen: true,
+                overwrite: true,
+                autoStrip: true,
+                autoIndent: true
+            });
+        };
+    </script>
+</html>
