@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block extra_header %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row top_position">
+    <div class="col-md-3 visible-lg"><!--Visible solo en desktop-->
+        {% include 'user/_user_column.html' %}
+
+    </div>   
+    <div class="col-md-9">
+
+        <div class="bs-component">
+            <div class="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">                    
+
+                        <h3>Prueba tu código!!!</h3>
+
+                        <textarea id="code" class="codepress linenumbers-off readonly-off"></textarea> 
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-3 col-md-offset-9 visible-lg">
+                                <button  id="mandar" class="btn btn-info">
+                                    <i class="fa fa-cogs"></i>
+                                </button>
+                                <button class="btn btn-success ">
+                                    <i class="fa fa-bolt"></i>
+                                </button>
+                            </div>                                           
+
+                        </div>
+                        <br>
+
+                        <div class=" hidden-lg">
+                            <button  id="mandar" class="btn btn-info">
+                                <i class="fa fa-cogs"></i>
+                            </button>
+                            <button class="btn btn-success ">
+                                <i class="fa fa-bolt"></i>
+                            </button>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bs-component">
+            <div class="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content pytters">
+                        <h3>Que están probando!!!</h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+{% endblock %}
+{% block extra_footer %}
+
+<script>
+
+    $("#mandar").click(function(){
+        var url = "{% url 'main:ejecutar' %}";
+        alert(url);
+        $.ajax({url: url, 
+                data:{ python: $('#code').val},
+                method: post,
+                success: function(result){
+                    $("#modal-body").html(result);
+                },
+                error: function(result){
+                    $("#modal-body").html("ERROR");
+                }
+               });
+    });
+
+</script>
+{% endblock %}

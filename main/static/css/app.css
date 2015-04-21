@@ -1,9 +1,23 @@
 
 .top_position{
- margin-top: 30px;   
+    margin-top: 30px;   
 }
+.div_messages{
+    position:absolute;
+    z-index: 10000;    
+    top: 40px;
+    right: 50px;
+}
+.div_close_messages{
+    position:relative;
+    z-index: 10001;
+    right: 0px;
+    top: 0px;
+}
+
+
 .bs-component {
-    
+
     position: relative;
 }
 .bs-component .modal {
@@ -14,10 +28,10 @@
     bottom: auto;
     z-index: 1;
     display: block;
-    
+
 }
 .bs-component .modal-dialog {
-    
+
     width: 95%
 }
 
@@ -25,6 +39,7 @@ textarea{
     margin-bottom: 5px;
     margin-left: 5%;
     width: 90%;   
+    resize: none;
 }
 .buttons-div{    
     padding-top: 10px;
@@ -32,7 +47,7 @@ textarea{
 }
 .buttons-div button{
     width: 50px;
-        
+
 }
 
 .btn-margin{
@@ -45,4 +60,8 @@ textarea{
 }
 .pytters{
     min-height: 100px;
+}
+.forms{
+    width: 95%;
+    margin: auto;
 }

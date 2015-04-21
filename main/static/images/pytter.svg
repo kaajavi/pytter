@@ -214,7 +214,7 @@
             if (opacity&gt;=200){
                 desc = '1';                
             }
-            if (opacity&lt;=-10){
+            if (opacity&lt;=-15){
                 desc = '0';                   
             }
         
