@@ -1,3 +1,16 @@
+textarea{
+    margin-bottom: 5px;
+    margin-left: 5%;
+    width: 90%;   
+    resize: none;
+}
+
+code{
+    background-color: cadetblue;
+    color: white;
+    
+}
+
 
 .top_position{
     margin-top: 30px;   
@@ -14,6 +27,8 @@
     right: 0px;
     top: 0px;
 }
+
+
 
 
 .bs-component {
@@ -35,12 +50,7 @@
     width: 95%
 }
 
-textarea{
-    margin-bottom: 5px;
-    margin-left: 5%;
-    width: 90%;   
-    resize: none;
-}
+
 .buttons-div{    
     padding-top: 10px;
     margin-left: 80%;

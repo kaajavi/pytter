@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+
+{% load static %}
+
 {% block extra_header %}
 {% endblock %}
 
@@ -9,6 +12,7 @@
 <div class="row top_position">
     <div class="col-md-3 visible-lg"><!--Visible solo en desktop-->
         {% include 'user/_user_column.html' %}
+        {% include 'user/_lastuser_column.html' %}
 
     </div>   
     <div class="col-md-9">
@@ -18,9 +22,17 @@
                 <div class="modal-dialog">
                     <div class="modal-content">                    
 
-                        <h3>Prueba tu código!!!</h3>
+                        <div class="row">
+                            <div class="col-md-1 hidden-xs">
+                                <h3><img src="{% get_media_prefix %}/{{user.userprofile.avatar}}" height="36px" alt="{% get_media_prefix %}/image/noAvatar.png"/></h3>
+                            </div>
+                            <div class="col-md-10" style="padding-top: 15px">
+                                <input maxlength="64" id="title_pytt" type="text" placeholder="Título del pytt" name="title "value="" class="form-control"/>
+                            </div>
 
-                        <textarea id="code" class="codepress linenumbers-off readonly-off"></textarea> 
+                        </div>
+                        <textarea id="code" class="">## Description: </textarea> 
+
                         <br>
                         <div class="row">
 
@@ -58,6 +70,7 @@
                     <div class="modal-content pytters">
                         <h3>Que están probando!!!</h3>
 
+
                     </div>
                 </div>
             </div>
@@ -66,9 +79,38 @@
 </div>
 
 {% endblock %}
-{% block extra_footer %}
+{% block scripts %}
 
 <script>
+
+
+    //PARA VER Y OCULTAR LA LISTA DE DESMATRICULADOS
+
+
+
+
+    var activeEditor = true;
+
+    $('#code').hide();
+
+    $('body').on('keyup', '#title_pytt', function(e){
+        if ($('#title_pytt').val()===''){
+         alert("Vacio");
+            //TODO - Quitar el editor
+        }
+        if (activeEditor === true){
+            activeEditor = false;
+            $('#code').show();
+            var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+                mode: {name: "python",
+                       version: 2,
+                       singleLineStringErrors: false},
+                lineNumbers: true,
+                indentUnit: 4,
+                matchBrackets: true,        
+            });
+        }
+    });
 
     $("#mandar").click(function(){
         var url = "{% url 'main:ejecutar' %}";

@@ -7,6 +7,7 @@ from django.utils.translation import ugettext_lazy
 
 
 # Register your models here.
-from main.models import UserProfile
+from main.models import UserProfile, Pytt
 
 admin.site.register(UserProfile)
+admin.site.register(Pytt)

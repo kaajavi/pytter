@@ -1,0 +1,31 @@
+{% load usertags %}
+{% load staticfiles %}
+{% load static %}
+<div class="bs-component">
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">                      
+                    <h4 class="modal-title">
+                        <a href="#" class="" title="Ver Todos">
+                            <i class="fa fa-user"></i></a> 
+                        Lista de Usuarios
+                    </h4>
+                </div>
+                <div class="modal-body"> 
+                    <div class="list-group">
+                        {% for i in "JAVI" %}
+                        
+                            <a href="" class="list-group-item"><img src="{% get_media_prefix %}/{{user.userprofile.avatar}}" height="36px" alt="{% get_media_prefix %}/image/noAvatar.png"/>
+                                {{user.username.title}}
+                            </a>
+                            </p>
+                        {% endfor %}                    
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

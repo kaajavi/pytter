@@ -10,7 +10,7 @@
                 </div>
                 <div class="modal-body">
                     <center>
-                        <p><img src="{% get_media_prefix %}/{{user.userprofile.avatar}}" height="96px" alt="{{user.username}}"/></p>
+                        <p><img src="{% get_media_prefix %}/{{user.userprofile.avatar}}" height="96px" alt="{% get_media_prefix %}/image/noAvatar.png"/></p>
                         <p><a href="" class=""><i class="fa fa-{{user.userprofile.genre_icon}}"></i> {{user.username.title}}</a></p>
                         {% if user.userprofile.web %}
                         <p><a href="{{user.userprofile.web}}" target="_blank"><i class="fa fa-link"></i> {{user.userprofile.web}}</a></p>
