@@ -44,8 +44,7 @@ class EditSocialProfileForm(forms.ModelForm):
 
     error_css_class = 'alert alert-danger'    
     genre = forms.ChoiceField(choices=GENRE_CHOICES, required=False,
-                              label='Soy')
-    avatar = forms.ImageField(label='Avatar',required = False, widget=MyFileInput)
+                              label='Soy')    
     
     class Meta:
 
@@ -59,26 +58,6 @@ class EditSocialProfileForm(forms.ModelForm):
             field.widget.attrs['class'] = 'form-control'
             if field.required:
                 field.widget.attrs['placeholder'] = 'Requerido'
-                field.label = '* ' + field.label
-                
-    def save(self, commit=True):
-        logger.info('INSTANCIA:' + self.avatar-clear_id)
-        instance = super(EditSocialProfileForm, self).save(commit=False)
-        
-        if (len(instance.avatar)==0):
-            instance.avatar = 'image/noAvatar.png'
-        if commit:
-            instance.save()
-        return instance
-    
-    def is_valid(self):
-        logger.info(self)
-
-        valid = super(EditSocialProfileForm, self).is_valid()
-        # we're done now if not valid
-        if not valid:
-            return valid
-
-        return True     
+                field.label = '* ' + field.label                
 
 

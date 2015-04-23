@@ -8,7 +8,7 @@ textarea{
 code{
     background-color: cadetblue;
     color: white;
-    
+
 }
 
 
@@ -74,4 +74,34 @@ code{
 .forms{
     width: 95%;
     margin: auto;
+}
+
+.title_pytt{
+    padding-right: 50px;   
+}
+
+.buttons-sending{
+    position: absolute;
+    right: 20px;
+    top:20px;
+    z-index: 10000;
+}
+.compile_output{
+    position: absolute;       
+    width: 80%;
+    z-index: 10002;
+    margin-left: 10%;
+    margin-top: 10%
+}
+
+.fotito_pytt{
+    background-color: rgb(255, 255, 255);
+    border-color: rgba(154, 154, 154, 0.78);
+    border-style: solid;
+    width: 60px;
+    height: 40px;
+}
+
+.color-title{
+    color: white !important;
 }

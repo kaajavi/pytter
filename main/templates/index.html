@@ -15,68 +15,60 @@
         {% include 'user/_lastuser_column.html' %}
 
     </div>   
-    <div class="col-md-9">
-
+    <div class="col-md-9">        
         <div class="bs-component">
             <div class="modal">
                 <div class="modal-dialog">
-                    <div class="modal-content">                    
-
+                    <div class="modal-content">                                            
                         <div class="row">
                             <div class="col-md-1 hidden-xs">
-                                <h3><img src="{% get_media_prefix %}/{{user.userprofile.avatar}}" height="36px" alt="{% get_media_prefix %}/image/noAvatar.png"/></h3>
+                                <h3><img src="{% get_media_prefix %}/{{user.userprofile.avatar}}" height="36px" alt=""/></h3>
                             </div>
                             <div class="col-md-10" style="padding-top: 15px">
+
                                 <input maxlength="64" id="title_pytt" type="text" placeholder="Título del pytt" name="title "value="" class="form-control"/>
+                                <div class="buttons-sending">
+
+
+                                    <button  id="ejecutar" class="btn btn-xs btn-info">
+                                        <i class="fa fa-cogs"></i>
+                                    </button>
+                                    <button id="guardar" class="btn btn-xs btn-success ">
+                                        <i class="fa fa-bolt"></i>
+                                    </button>
+
+
+                                </div>
                             </div>
 
                         </div>
-                        <textarea id="code" class="">## Description: </textarea> 
+                        <div id="div_code">
+                            <div id="compile_output" class="compile_output">
 
-                        <br>
-                        <div class="row">
-
-                            <div class="col-md-3 col-md-offset-9 visible-lg">
-                                <button  id="mandar" class="btn btn-info">
-                                    <i class="fa fa-cogs"></i>
-                                </button>
-                                <button class="btn btn-success ">
-                                    <i class="fa fa-bolt"></i>
-                                </button>
-                            </div>                                           
+                            </div>
+                            <textarea id="code" class="">## Description: </textarea> 
 
                         </div>
-                        <br>
-
-                        <div class=" hidden-lg">
-                            <button  id="mandar" class="btn btn-info">
-                                <i class="fa fa-cogs"></i>
-                            </button>
-                            <button class="btn btn-success ">
-                                <i class="fa fa-bolt"></i>
-                            </button>
-                        </div>
 
 
+                        <br> 
 
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="bs-component">
-            <div class="modal">
-                <div class="modal-dialog">
-                    <div class="modal-content pytters">
-                        <h3>Que están probando!!!</h3>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        <h4>Se está probando:</h4>
+        {% for pytt in pytts %}
+        {% include '_pytt.html' %}
+        {% endfor %}          
     </div> 
 </div>
+
+<form id="save_pytt" action="{% url 'main:add_pytt' %}" method="post">
+    {% csrf_token %} 
+    <input id="form_Code" type="hidden" value="" name="code">
+    <input id="form_Title" type="hidden" value="" name="title">
+</form>
 
 {% endblock %}
 {% block scripts %}
@@ -87,45 +79,102 @@
     //PARA VER Y OCULTAR LA LISTA DE DESMATRICULADOS
 
 
+    $(".pytts").each(function() {        
+        var aux = CodeMirror.fromTextArea(document.getElementById($(this).attr('id')), {
+            mode: {name: "python",
+                   version: 2,
+                   singleLineStringErrors: false},
+            readOnly: true,
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true,        
+        });        
+    });
 
 
-    var activeEditor = true;
 
-    $('#code').hide();
-
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        mode: {name: "python",
+               version: 2,
+               singleLineStringErrors: false},
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true,        
+    });
+    $('#div_code').hide();
     $('body').on('keyup', '#title_pytt', function(e){
         if ($('#title_pytt').val()===''){
-         alert("Vacio");
-            //TODO - Quitar el editor
+            $('#div_code').hide('slide');            
+        }else if (!$('#div_code').is(":visible")){
+            $('#div_code').show('bind');              
         }
-        if (activeEditor === true){
-            activeEditor = false;
-            $('#code').show();
-            var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-                mode: {name: "python",
-                       version: 2,
-                       singleLineStringErrors: false},
-                lineNumbers: true,
-                indentUnit: 4,
-                matchBrackets: true,        
-            });
-        }
+
+
+
+
     });
 
-    $("#mandar").click(function(){
-        var url = "{% url 'main:ejecutar' %}";
-        alert(url);
-        $.ajax({url: url, 
-                data:{ python: $('#code').val},
-                method: post,
-                success: function(result){
-                    $("#modal-body").html(result);
-                },
-                error: function(result){
-                    $("#modal-body").html("ERROR");
-                }
-               });
+    $(".btn-hide").each(function() {        
+        var id = $(this).attr('id').replace('btn-hide-','');
+        var obj = "#body-" + id;                
+        $(obj).hide();
+        $(this).hide();
+
     });
+
+    $(".btn-show").click(function(){
+        var id = $(this).attr('id').replace('btn-show-','');
+        var obj_main = "#body-" + id; 
+        var obj_eye = "#btn-hide-" + id; 
+        $(this).hide();
+        $(obj_main).show('bind');
+        $(obj_eye).show();
+
+    });
+
+    $(".btn-hide").click(function(){    
+        var id = $(this).attr('id').replace('btn-hide-','');
+        var obj_main = "#body-" + id; 
+        var obj_eye = "#btn-show-" + id; 
+        $(this).hide();
+        $(obj_main).hide('slide');
+        $(obj_eye).show();
+
+    });
+
+    $("#ejecutar").click(function(){
+        var url = "{% url 'main:ejecutar' %}";
+
+
+        $.ajax({
+            url : url, // the endpoint
+            method: 'post',
+            data:{ code: editor.getValue(), 
+                  csrfmiddlewaretoken: '{{ csrf_token }}'
+                 },
+            success : function(data) {
+                // hide the post    
+                $('#compile_output').html(data);
+                console.log(data);
+            },
+
+            error : function(xhr,errmsg,err) {
+                // Show an error                
+                console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+            }
+        });
+
+    });
+
+    $("#guardar").click(function(){        
+        var textCode = editor.getValue();
+        var title_pytt = $("#title_pytt").val();
+        $("#form_Title").val(title_pytt);
+        $("#form_Code").val(textCode);
+        $("form#save_pytt").submit();
+    });
+
+
 
 </script>
 {% endblock %}

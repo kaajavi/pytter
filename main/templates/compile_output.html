@@ -1,0 +1,25 @@
+<ul class="messages">                    
+    {% if error %}
+    <div id="msg_error" class="alert alert-danger" role="alert">
+        <div id="cmd_error" onclick="$(this).parent().remove();"  class="btn btn-xs btn-default div_close_messages"><i class="fa fa-close"></i></div>
+        <strong>Error!!!</strong> {{msg}}
+    </div>                
+    {% else %}
+        {% if warnings %}
+            {% for message in msg %}
+            <div>
+
+                <div id="msg_{{forloop.counter}}" class="alert alert-warning" role="alert">
+                    <div id="cmd_{{forloop.counter}}" onclick="$(this).parent().remove();"  class="btn btn-xs btn-default div_close_messages"><i class="fa fa-close"></i></div>
+                    <strong></strong> {{ message }}
+                </div>                
+            </div>
+            {% endfor %}
+        {% else %}
+        <div id="msg_{{forloop.counter}}" class="alert alert-success" role="alert">
+            <div id="cmd_{{forloop.counter}}" onclick="$(this).parent().remove();"  class="btn btn-xs btn-default div_close_messages"><i class="fa fa-close"></i></div>
+            <strong>Compila!!!</strong> Felicitaciones!!! Tu código compila!!!
+        </div>  
+        {% endif %}    
+    {% endif %}
+</ul>

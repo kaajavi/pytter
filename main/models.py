@@ -12,7 +12,13 @@ from django.contrib.auth.models import User
 GENRE_CHOICES = (('m', 'Programador'), ('f', 'Programadora'))
 
 class Pytt(models.Model):
-    funciona = models.BooleanField('Funciona?')
+    
+    class Meta:
+        ordering = ['-upload_date']
+    
+    funciona = models.BooleanField('Funciona?', default=False)
+    warnings = models.BooleanField('Warnings?', default=False)
+    title = models.CharField('Título', max_length=64, default='')
     autor= models.ForeignKey(settings.AUTH_USER_MODEL) 
     codigo= models.TextField('Código')
     upload_date = models.DateTimeField(auto_now_add=True)
@@ -35,7 +41,7 @@ class UserProfile(models.Model):
     googleplus = models.URLField('Google+', max_length=200, null=True,
                                   blank=True)
     avatar = models.FileField('Avatar', upload_to='image/',
-                              default='image/noAvatar.png')
+                              default='image/noAvatar.png', blank=True)
     
     upload_date = models.DateTimeField(auto_now_add=True)
 
@@ -46,6 +52,10 @@ class UserProfile(models.Model):
             return 'female'
         else:
             return 'neuter'
+    
+    
+    def __unicode__(self):
+        return self.user
 
 
 def create_user_profile(

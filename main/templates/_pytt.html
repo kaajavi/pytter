@@ -1,11 +1,38 @@
-<div class="panel panel-success">
-    <div class="panel-heading">
-        <h3 class="panel-title"><img src="/media/image/noAvatar.png" height="24px" /> Como hacer tal cosa</h3>
-    </div>
-    <div class="panel-body">
-        <code>
-            for i in "python":
-            print i
-        </code>
-    </div>
-</div>
+{% load static %}
+
+<div class="bs-component">
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content pytters">
+
+                {% if pytt.warnings %}
+                <div class="panel panel-warning" style="width: 99%; margin:auto;">
+                    {% else %}
+                    {% if pytt.funciona %}
+
+                    <div class="panel panel-success" style="width: 99%; margin:auto;">
+                        {% else %}
+                        <div class="panel panel-danger" style="width: 99%; margin:auto;">
+                            {% endif %}
+                            {% endif %}
+                            <div class="panel-heading">
+                                <h3 class="panel-title" style="color: white">                                
+                                    <span id="btn-show-{{pytt.id}}" class="btn btn-xs btn-show" ><i class="fa fa-2x fa-eye"></i></span> 
+                                    <span id="btn-hide-{{pytt.id}}" class="btn btn-xs btn-hide" ><i class="fa fa-2x fa-eye-slash"></i></span>
+                                    <a class="btn btn-xs" href="#"><img src="{% get_media_prefix %}/{{pytt.autor.userprofile.avatar}}" height="24px" /></a>  
+                                    
+                                    <strong>{{pytt.title}} </strong>
+
+                                </h3>
+                            </div>
+                            <div id="body-{{pytt.id}}" class="panel-body">
+                                <textArea id="{{pytt.id}}" class="pytts">{{pytt.codigo}}</textArea>                                        
+                            </div>
+                        </div>
+                        
+
+
+                    </div>
+                </div>
+            </div>
+        </div>

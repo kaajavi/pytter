@@ -38,7 +38,7 @@
 
                         <h3>Editar mi perfil social.</h3>
                         <div class="forms">
-                        <form action="{% url 'main:edit_social_profile' %}"  method="post">
+                        <form action="{% url 'main:edit_social_profile' %}"  method="post" enctype="multipart/form-data">
                             {% csrf_token %}        
                             {{ form.as_p }}
                             <input type="submit" class="btn btn-lg btn-primary btn-primary btn-margin" name="si_volver" value="Guardar y Regresar" />
