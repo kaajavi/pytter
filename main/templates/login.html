@@ -1,6 +1,5 @@
-
-
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -20,29 +19,36 @@
 
     </head>
 
-    <body>
-        <div class="container">
+    <body class="background_login">
+        <div class="container top_position">
+            <ul class="messages">
+                    {% for message in messages %}
 
-            <div class="row">
+                    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+                        <div id="cmd_error" onclick="$(this).parent().remove();"  class="btn btn-xs btn-default div_close_messages"><i class="fa fa-close"></i></div>
+                        <strong></strong> {{ message }}
+                    </div>
+
+                    {% endfor %}
+                </ul>
+            <center>
+            <object id="logo" width="360px" height="102px" type="image/svg+xml" data="{% static 'images/pytter_login.svg' %}">
+
+                        </object> 
+            </center>
+            <br>
+            <div class="row">                
+                
                 <div class="col-md-4 col-md-offset-4">
-
-                    <div class="login-panel panel panel-default">
+                    <div class="login-panel panel panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title">
-                                <img type="image/png" src="{{STATIC_URL}}images/logo_amparo.png" height="32" width="32"/>
-                                Loguearse
+                            <h3 class="panel-title" style="color: white">                                
+                                Logueate!
                             </h3>
                         </div>
 
                         <div class="panel-body">
-                            <ul class="messages">
-                                {% for message in messages %}
-                                <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
-                                    <strong></strong> {{ message }}
-                                </div>
 
-                                {% endfor %}
-                            </ul>
                             <form action="" role="form" method="POST">{% csrf_token %}
                                 <fieldset>
                                     <div class="form-group">
@@ -53,12 +59,32 @@
                                     </div>
 
                                     <!-- Change this to a button or input when using this as a form -->
-                                    <input class="btn btn-lg btn-success btn-block" type="submit" value="Ingresar">
+                                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Ingresar">
+                                    <a class="btn btn-lg btn-success btn-block" href="{% url 'main:registro' %}">Registrate!</a>
                                 </fieldset>
                             </form>
                         </div>
                     </div>
                 </div>
+                
+
+            </div>
+            
+            <div class='row top_position'>
+                
+                    <center>
+                        <img src="{% static 'images/cole.png' %}" height="96px" alt=""/>
+                
+                                
+                        <img src="{% static 'images/flisol.png' %}" height="96px" alt=""/>
+                
+                
+                        <img src="{% static 'images/django.png' %}" height="96px" alt=""/>
+                
+                
+                        <img src="{% static 'images/python.png' %}" height="96px" alt=""/>
+                        </center>
+                
             </div>
         </div>
 

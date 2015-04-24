@@ -15,6 +15,8 @@ class Pytt(models.Model):
     
     class Meta:
         ordering = ['-upload_date']
+        verbose_name = 'Pytt'
+        verbose_name_plural = 'Pytters'
     
     funciona = models.BooleanField('Funciona?', default=False)
     warnings = models.BooleanField('Warnings?', default=False)

@@ -92,9 +92,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ar'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 
 USE_I18N = True
 
@@ -135,12 +135,15 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['console'],
+            'handlers': ['file'],
             'level': 'DEBUG',
             'propagate': True,
         },
     }
 }
+
+from django.contrib.messages import constants as message_constants
+MESSAGE_TAGS = {message_constants.ERROR: 'danger'}
 
 if DEBUG:
     # make all loggers use the console.
@@ -148,6 +151,3 @@ if DEBUG:
         LOGGING['loggers'][logger]['handlers'] = ['console']
 
 
-
-        from django.contrib.messages import constants as message_constants
-        MESSAGE_TAGS = {message_constants.ERROR: 'danger'}

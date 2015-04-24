@@ -19,7 +19,7 @@ def checkCode(codeString):
         if text is None:            
             error = "unexpectedError: Problema de decodificación de la fuente";            
         else:
-            error = "Code.py:"+str(lineno)+": " +msg + " -> " + text;            
+            error = "Code.py: "+str(lineno)+": " +msg + " -> " + text;            
         return True,False, error.capitalize()
     except Exception:
         #reporter.unexpectedError(filename, 'problem decoding source')

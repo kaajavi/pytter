@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Pytter - Como el pajarito pero mas ñoño</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" media="screen">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}" media="screen">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" media="screen">        
+        <link rel="stylesheet" href="{% static 'css/app.css' %}" media="screen">
+        {% block extra_header %}
+
+        {% endblock %}    
+
+    </head>
+
+    <body class="background_login">
+        <div class="container top_position">
+            <ul class="messages">
+                    {% for message in messages %}
+
+                    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+                        <div id="cmd_error" onclick="$(this).parent().remove();"  class="btn btn-xs btn-default div_close_messages"><i class="fa fa-close"></i></div>
+                        <strong></strong> {{ message }}
+                    </div>
+
+                    {% endfor %}
+                </ul>
+            <center>
+            <object id="logo" width="360px" height="102px" type="image/svg+xml" data="{% static 'images/pytter_login.svg' %}">
+
+                        </object> 
+            </center>
+            <br>
+            <div class="row">                
+                
+                <div class="col-md-2">
+                     <center>
+                        <img src="{% static 'images/cole.png' %}" height="96px" alt=""/>
+                
+                                
+                        <img src="{% static 'images/flisol.png' %}" height="96px" alt=""/>
+                
+                
+                        <img src="{% static 'images/django.png' %}" height="96px" alt=""/>
+                
+                
+                        <img src="{% static 'images/python.png' %}" height="96px" alt=""/>
+                        </center>
+                </div>
+
+                <div class="col-md-4 col-md-offset-2">
+                    <div class="login-panel panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title" style="color: white">
+                                Registrate!
+                            </h3>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <form action="{% url 'main:registro' %}" role="form" method="POST">
+                                {% csrf_token %}
+                                {{createUserForm.as_p}}
+                                <input class="btn btn-lg btn-primary btn-block" type="submit" value="Registrarse">
+                                <a class="btn btn-lg btn-info btn-block" href="{% url 'main:loguearse' %}">Ingresar</a>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+                        
+        </div>
+
+        <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>    
+
+        <script src="{% static 'js/Behave.js' %}"></script>
+        <script src="{% static 'js/app.js' %}"></script>  
+
+    </body>

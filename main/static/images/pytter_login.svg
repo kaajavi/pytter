@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="0.48.4 r9939"
+   version="1.1"
+   id="svg3784"
+   height="100.278"
+   width="355.30847"
+   sodipodi:docname="pytter.svg"
+   inkscape:export-xdpi="35.093285"
+   inkscape:export-ydpi="35.093285">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2"
+     inkscape:cx="224.60429"
+     inkscape:cy="31.523264"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="743"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs3786">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6713">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop6715" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop6717" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6713"
+       id="linearGradient6719"
+       x1="311.07144"
+       y1="499.50504"
+       x2="407.14288"
+       y2="553.07648"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="131.85291"
+       x2="110.14919"
+       y1="77.070274"
+       x1="55.549179"
+       id="linearGradient9521"
+       xlink:href="#linearGradient9515"
+       inkscape:collect="always" />
+    <linearGradient
+       id="linearGradient9515"
+       inkscape:collect="always">
+      <stop
+         id="stop9517"
+         offset="0"
+         style="stop-color:#387eb8;stop-opacity:1" />
+      <stop
+         id="stop9519"
+         offset="1"
+         style="stop-color:#366994;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="168.1012"
+       x2="147.77737"
+       y1="111.92053"
+       x1="89.136749"
+       id="linearGradient11307"
+       xlink:href="#linearGradient11301"
+       inkscape:collect="always" />
+    <linearGradient
+       id="linearGradient11301"
+       inkscape:collect="always">
+      <stop
+         id="stop11303"
+         offset="0"
+         style="stop-color:#ffe052;stop-opacity:1" />
+      <stop
+         id="stop11305"
+         offset="1"
+         style="stop-color:#ffc331;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       y2="168.1012"
+       x2="147.77737"
+       y1="111.92053"
+       x1="89.136749"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3014"
+       xlink:href="#linearGradient11301"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient11301"
+       id="linearGradient3004"
+       gradientUnits="userSpaceOnUse"
+       x1="89.136749"
+       y1="111.92053"
+       x2="147.77737"
+       y2="168.1012"
+       gradientTransform="matrix(0.88095298,0,0,0.88095298,-30.587997,963.32916)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient9515"
+       id="linearGradient3007"
+       gradientUnits="userSpaceOnUse"
+       x1="55.549179"
+       y1="77.070274"
+       x2="110.14919"
+       y2="131.85291"
+       gradientTransform="matrix(0.88095298,0,0,0.88095298,-30.587997,963.32916)" />
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Capa 1"
+     transform="translate(-1.1428528,-1019.2572)">
+    <path
+       id="azul"
+       d="m 57.287062,1022.766 c -24.694637,0 -23.152545,10.7091 -23.152545,10.7091 l 0.02761,11.0944 23.565493,0 0,3.3313 -32.925618,0 c 0,0 -15.8020941,-1.7923 -15.8020941,23.1249 -1.8e-6,24.9169 13.7924201,24.0335 13.7924201,24.0335 l 8.231404,0 0,-11.5627 c 0,0 -0.443692,-13.7921 13.572181,-13.7921 14.015874,0 23.372784,0 23.372784,0 0,0 13.131706,0.2137 13.131706,-12.6914 0,-12.9036 0,-21.3357 0,-21.3357 0,0 1.993754,-12.9113 -23.813261,-12.9113 z m -12.994055,7.4604 c 2.344593,0 4.239585,1.8952 4.239585,4.2396 3e-6,2.3447 -1.894992,4.2397 -4.239585,4.2397 -2.344596,0 -4.239588,-1.895 -4.239588,-4.2397 0,-2.3444 1.894992,-4.2396 4.239588,-4.2396 z"
+       style="opacity:0.35714291;color:#000000;fill:url(#linearGradient3007);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible"
+       inkscape:connector-curvature="0"
+       inkscape:label="#azul" />
+    <path
+       style="opacity:0.35714291;color:#000000;fill:url(#linearGradient3004);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible"
+       d="m 57.988391,1119.5352 c 24.694643,0 23.152545,-10.7091 23.152545,-10.7091 l -0.02761,-11.0945 -23.56549,0 0,-3.3312 32.925616,0 c 0,0 15.802098,1.7922 15.802098,-23.125 0,-24.9169 -13.792424,-24.0334 -13.792424,-24.0334 l -8.231402,0 0,11.5626 c 0,0 0.443698,13.7922 -13.572184,13.7922 -14.015874,0 -23.372784,0 -23.372784,0 0,0 -13.131707,-0.2138 -13.131707,12.6913 0,12.9037 0,21.3358 0,21.3358 0,0 -1.993756,12.9113 23.813262,12.9113 z m 12.994055,-7.4604 c -2.344596,0 -4.239585,-1.8953 -4.239585,-4.2397 0,-2.3447 1.894989,-4.2396 4.239585,-4.2396 2.344596,0 4.239585,1.8949 4.239585,4.2396 9e-6,2.3444 -1.894989,4.2397 -4.239585,4.2397 z"
+       id="ama"
+       inkscape:connector-curvature="0"
+       inkscape:label="#path8620" />
+    <path
+       id="vivora"
+       d="m 44.596724,1019.2572 c 34.050968,0 31.92461,14.7668 31.92461,14.7668 l -0.038,15.2979 -32.494015,0 0,4.5932 45.40054,0 c 0,0 21.789191,-2.4711 21.789191,31.8866 3e-5,34.3578 -19.018113,33.1395 -19.018113,33.1395 l -11.350135,0 0,-15.9433 c 0,0 0.611827,-19.0181 -18.714413,-19.0181 -19.326241,0 -32.228313,0 -32.228313,0 0,0 -18.107069,0.2939 -18.107069,-17.4998 0,-17.7925 0,-29.4193 0,-29.4193 0,0 -2.74914,-17.8035 32.835686,-17.8035 z m 17.917248,10.2873 c -3.232925,0 -5.845888,2.613 -5.845888,5.846 0,3.233 2.612963,5.846 5.845888,5.846 3.232925,0 5.845889,-2.613 5.845889,-5.846 2.9e-5,-3.233 -2.612964,-5.846 -5.845889,-5.846 z"
+       style="color:#000000;fill:#094632;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:label="#path8620" />
+    <text
+       xml:space="preserve"
+       style="font-size:92.07553101px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="107.63986"
+       y="1075.7151"
+       id="text6721"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/kaajavi/MEGA/Charlas/Flisol2015/presentacion/logo.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan6723"
+         x="107.63986"
+         y="1075.7151"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#ffffff;font-family:DTLProkyonT;-inkscape-font-specification:DTLProkyonT Medium">pytter</tspan></text>
+    <rect
+       style="fill:#094632;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="rect6725"
+       width="355.30847"
+       height="4.3383207"
+       x="1.1428528"
+       y="1100.3375"
+       inkscape:export-filename="/home/kaajavi/MEGA/Charlas/Flisol2015/presentacion/logo.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+  <script
+     id="script15">
+        
+        window.setInterval(&quot;animar()&quot;, 100);
+        
+        
+        
+        var ama = document.getElementById(&quot;ama&quot;);   
+        var azul = document.getElementById(&quot;azul&quot;);   
+        var vivora = document.getElementById(&quot;vivora&quot;);                
+        var desc = '1';
+        var opacity = 100;
+        
+        
+        
+        function animar(){
+                                    
+            if (opacity&gt;=200){
+                desc = '1';                
+            }
+            if (opacity&lt;=-15){
+                desc = '0';                   
+            }
+        
+            if (desc=='1'){
+                opacity--
+            }
+            if (desc=='0'){
+                opacity++
+            }
+
+            
+            var op = parseFloat(opacity/100.0).toFixed(2);
+            var rev_op = parseFloat(1-(opacity/100.0)).toFixed(2);;
+            var style_vivo=&quot;color:#000000;fill:#094632;fill-opacity:&quot; + op.toString() + &quot;;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible&quot;;
+            
+      
+            var style_ama=&quot;opacity:&quot;+ rev_op.toString() +&quot;;color:#000000;fill:url(#linearGradient3004);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible&quot;;
+      
+            var style_azul=&quot;opacity:&quot;+ rev_op.toString() +&quot;;color:#000000;fill:url(#linearGradient3007);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible&quot;;
+      
+            vivora.setAttributeNS(null, 'style', style_vivo);
+            ama.setAttributeNS(null, 'style', style_ama);
+            azul.setAttributeNS(null, 'style', style_azul);
+                        
+            
+
+        }
+        
+
+
+    </script>
+</svg>
