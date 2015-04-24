@@ -1,0 +1,9 @@
+---
+- name: "Deploy pytter"
+  hosts: all
+  tasks:
+    - name: Git | Checkout the project
+      git:
+        repo={{ repo.url }}
+        dest={{ project.name }}
+        version={{ repo.branch }}
