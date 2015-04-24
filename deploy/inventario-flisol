@@ -1,3 +1,3 @@
 # Inventario para el flisol 2015
 [raspberry-flisol]
-192.168.0.15 ansible_ssh_user=pi
+192.168.0.15 ansible_ssh_user=flisol
