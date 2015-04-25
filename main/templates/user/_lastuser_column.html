@@ -14,10 +14,10 @@
                 </div>
                 <div class="modal-body"> 
                     <div class="list-group">
-                        {% for i in "JAVI" %}
+                        {% for profile in users %}
                         
-                            <a href="" class="list-group-item"><img src="{% get_media_prefix %}/{{user.userprofile.avatar}}" height="36px" alt="{% get_media_prefix %}/image/noAvatar.png"/>
-                                {{user.username.title}}
+                            <a href="" class="list-group-item"><img src="{% get_media_prefix %}/{{profile.avatar}}" height="36px" alt="no avatar"/>
+                                {{profile.user.username.title}}
                             </a>
                             </p>
                         {% endfor %}                    
