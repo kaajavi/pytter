@@ -1,0 +1,11 @@
+---
+repo:
+  branch: master
+  url: https://github.com/emilioramirez/pytter.git
+
+project:
+  name: pytter
+  user: flisol
+  requirements: /home/flisol/pytter/requirements.txt
+  virtualenv: /home/flisol/venv
+  dir: /home/flisol/pytter/

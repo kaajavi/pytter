@@ -1,0 +1,32 @@
+---
+- name: "Deploy Pytter"
+  hosts: all
+  tasks:
+    - name: Apt | Install base packages
+      apt: name={{ item }} state=present update_cache=yes cache_valid_time=86400
+      sudo: yes
+      with_items:
+        - python-dev
+        - python-virtualenv
+
+    - name: Git | Checkout the project
+      git:
+        repo={{ repo.url }}
+        dest={{ project.name }}
+        version={{ repo.branch }}
+
+    - name: Pip | Install Requirements on virtualenv
+      pip: requirements={{ project.requirements }}
+           virtualenv={{ project.virtualenv }}
+
+    - name: Django | Database syncdb
+      django_manage: 
+        app_path={{ project.dir }}
+        command=syncdb
+        virtualenv={{ project.virtualenv }}
+
+    - name: Django | Database migrate
+      django_manage: 
+        app_path={{ project.dir }}
+        command=migrate
+        virtualenv={{ project.virtualenv }}

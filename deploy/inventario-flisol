@@ -1,0 +1,6 @@
+# Inventario para el flisol 2015
+[raspberry-flisol]
+192.168.11.101 ansible_ssh_user=flisol
+
+[server-rosario]
+server.rosario.com.ar ansible_ssh_user=juan
