@@ -8,3 +8,4 @@ project:
   user: flisol
   requirements: /home/flisol/pytter/requirements.txt
   virtualenv: /home/flisol/venv
+  dir: /home/flisol/pytter/

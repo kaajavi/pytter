@@ -1,5 +1,5 @@
 ---
-- name: "Deploy pytter"
+- name: "Deploy Pytter"
   hosts: all
   tasks:
     - name: Apt | Install base packages
@@ -8,13 +8,25 @@
       with_items:
         - python-dev
         - python-virtualenv
-    
+
     - name: Git | Checkout the project
       git:
         repo={{ repo.url }}
         dest={{ project.name }}
         version={{ repo.branch }}
-    
+
     - name: Pip | Install Requirements on virtualenv
       pip: requirements={{ project.requirements }}
            virtualenv={{ project.virtualenv }}
+
+    - name: Django | Database syncdb
+      django_manage: 
+        app_path={{ project.dir }}
+        command=syncdb
+        virtualenv={{ project.virtualenv }}
+
+    - name: Django | Database migrate
+      django_manage: 
+        app_path={{ project.dir }}
+        command=migrate
+        virtualenv={{ project.virtualenv }}
